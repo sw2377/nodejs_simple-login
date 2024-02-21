@@ -3,6 +3,8 @@
 // module
 const express = require("express");
 const app = express();
+const dotenv = require("dotenv");
+dotenv.config(); // 환경변수 세팅
 
 // routing
 const home = require("./src/routes/home")
