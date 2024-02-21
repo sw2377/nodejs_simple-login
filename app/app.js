@@ -29,6 +29,7 @@ app.use(express.urlencoded({ extended: false }));
 // morgan 
 // app.use(morgan("dev"));
 // app.use(morgan("common", { stream: accessLogStream }));
+// app.use(morgan("tiny", { stream: logger.stream }));
 
 app.use("/", home); 
 
