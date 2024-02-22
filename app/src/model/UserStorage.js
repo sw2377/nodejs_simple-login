@@ -4,33 +4,33 @@ const db = require("../config/db");
 
 class UserStorage {
 
-  static #getUsers(data, isAll, fields) {
-    const users = JSON.parse(data);
+  // static #getUsers(data, isAll, fields) {
+  //   const users = JSON.parse(data);
 
-    // 모든 fields를 가져오고 싶다면 isAll을 true로 설정
-    if (isAll) return users; 
+  //   // 모든 fields를 가져오고 싶다면 isAll을 true로 설정
+  //   if (isAll) return users; 
 
-    const newUsers = fields.reduce((newUsers, current) => {
-      if (users.hasOwnProperty(current)) {
-        newUsers[current] = users[current]
-      }
-      return newUsers
-    }, {})
+  //   const newUsers = fields.reduce((newUsers, current) => {
+  //     if (users.hasOwnProperty(current)) {
+  //       newUsers[current] = users[current]
+  //     }
+  //     return newUsers
+  //   }, {})
 
-    return newUsers;
-  }
+  //   return newUsers;
+  // }
 
-  static #getUserInfo(data, id) {
-    const users = JSON.parse(data);
-    const idx = users.id.indexOf(id);
-    const usersKeys = Object.keys(users);
-    const userInfo = usersKeys.reduce((newUser, info) => {
-      newUser[info] = users[info][idx];
-      return newUser;
-    }, {})
+  // static #getUserInfo(data, id) {
+  //   const users = JSON.parse(data);
+  //   const idx = users.id.indexOf(id);
+  //   const usersKeys = Object.keys(users);
+  //   const userInfo = usersKeys.reduce((newUser, info) => {
+  //     newUser[info] = users[info][idx];
+  //     return newUser;
+  //   }, {})
 
-    return userInfo;
-  }
+  //   return userInfo;
+  // }
 
   // static getUsers(isAll, ...fields) { 
   //   console.log("getUsers");
